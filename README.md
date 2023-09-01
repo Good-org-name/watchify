@@ -20,3 +20,9 @@ EXTRAS
 - [ ] how specific ratings can get
 - [ ] friends and sharing or combining lists
 
+Techstack:
+- [ ] TMDB API
+- [ ] Tailwind / material UI
+- [ ] Redux toolkit
+- [ ] Vite over webpack?
+- [ ] Oauth ? extra
