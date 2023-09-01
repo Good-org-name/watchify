@@ -21,8 +21,10 @@ EXTRAS
 - [ ] friends and sharing or combining lists
 
 Techstack:
-- [ ] TMDB API
+- [ ] TMDB API : https://developer.themoviedb.org/docs/search-and-query-for-details
 - [ ] Tailwind / material UI
 - [ ] Redux toolkit
 - [ ] Vite over webpack?
 - [ ] Oauth ? extra
+- [ ] check kaggle.com for datasets for the model
+- [ ] tensor.js node API for natural language proccesser
