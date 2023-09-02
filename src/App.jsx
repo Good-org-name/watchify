@@ -7,10 +7,8 @@ const App = () => {
   return (
     <BrowserRouter>
       <div>
-        Watchify
-        <div>
-          <Navbar />
-        </div>
+        <Navbar />
+        
         <Home />
         <Login/>
         <Registration />
