@@ -6,7 +6,7 @@ server.use("/dist", express.static(path.join(__dirname, "../../dist")));
 server.use("/static", express.static(path.join(__dirname, "../static")));
 
 server.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../static/index.html"));
+    res.sendFile(path.join(__dirname, "../index.html"));
 })
 
 async function init(){

@@ -22,9 +22,9 @@ EXTRAS
 
 Techstack:
 - [ ] TMDB API : https://developer.themoviedb.org/docs/search-and-query-for-details
-- [ ] Tailwind / material UI
+- [ ] Tailwind CSS https://tailwindcss.com/ / material UI
 - [ ] Redux toolkit
-- [ ] Vite over webpack
+- [ ] Vite.js over webpack
 - [ ] Oauth ? extra
 - [ ] check kaggle.com for datasets for the model
 - [ ] tensor.js node API for natural language proccesser
