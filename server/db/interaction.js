@@ -1,4 +1,4 @@
-import db from "./db";
+import db from "./db.js";
 const { INTEGER, STRING } = db.Sequelize;
 
 const Interaction = db.define("interaction", {

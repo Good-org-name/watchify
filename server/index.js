@@ -2,6 +2,7 @@ import express from "express";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
 import db from "./db/db.js";
+import userRoutes from "./routes/userRoutes.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -10,6 +11,9 @@ const server = express();
 
 server.use("/dist", express.static(path.join(__dirname, "../../dist")));
 server.use("/static", express.static(path.join(__dirname, "../static")));
+
+//routes
+server.use("/api", userRoutes);
 
 server.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../index.html"));

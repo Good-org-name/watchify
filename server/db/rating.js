@@ -1,4 +1,4 @@
-import db from "./db";
+import db from "./db.js";
 const { STRING, INTEGER } = db.Sequelize;
 
 const Rating = db.define("rating", {
