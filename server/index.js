@@ -1,20 +1,31 @@
-const express = require("express");
+import express from "express";
+import path, { dirname } from "path";
+import { fileURLToPath } from "url";
+import db from "../db/db.js";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 const server = express();
-const path = require("path");
 
 server.use("/dist", express.static(path.join(__dirname, "../../dist")));
 server.use("/static", express.static(path.join(__dirname, "../static")));
 
 server.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../index.html"));
-})
+  res.sendFile(path.join(__dirname, "../index.html"));
+});
 
-async function init(){
-    try {
-        server.listen(3000, () => {console.log("Listening on port 3000")});
-    } catch (error) {
-        console.log(error);
-    }
+async function init() {
+  try {
+    await db.authenticate();
+    console.log("Database connected.");
+
+    server.listen(3000, () => {
+      console.log("Listening on port 3000");
+    });
+  } catch (error) {
+    console.error("Unable to start the server:", error);
+  }
 }
 
 init();
