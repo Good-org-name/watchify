@@ -1,0 +1,19 @@
+Site Features
+
+User Authentication and Initial Setup: 
+  Users can create an account and log in. During initial login, they are required to select their favorite genre, favorite movie, and favorite show.
+
+Home Screen: 
+  After login, the home screen directly displays movie and TV show recommendations.
+
+Persistent Recommendations: 
+  If the user logs out or closes the browser without rating or showing interest in a recommendation, the same recommendation will appear again until an action is taken.
+
+Movie List: 
+  Users can browse a list of movies fetched from the TMDb API.
+
+Movie Ratings and Interest: 
+  For every recommendation, users must select a rating and interest ("watched," "want to watch," or "not interested").
+
+Recommendations: 
+  The system will provide movie and TV show recommendations based on user interactions and initial selections. These recommendations are powered by TensorFlow.js.
