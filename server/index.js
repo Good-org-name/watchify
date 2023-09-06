@@ -3,6 +3,7 @@ import path, { dirname } from "path";
 import { fileURLToPath } from "url";
 import db from "./db/db.js";
 import userRoutes from "./routes/userRoutes.js";
+import fetchTMDB from "./routes/fetchTMDB.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -14,6 +15,7 @@ server.use("/static", express.static(path.join(__dirname, "../static")));
 
 //routes
 server.use("/api", userRoutes);
+server.use("/api", fetchTMDB);
 
 server.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../index.html"));

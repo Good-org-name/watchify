@@ -1,9 +1,11 @@
 import { BrowserRouter } from "react-router-dom";
 import * as tf from "@tensorflow/tfjs";
 
-const tensor = tf.tensor([1, 2, 3, 4]);
-const squared = tensor.square();
-squared.print(); // Output will be: [[1, 4], [9, 16]]
+const model = tf.sequential();
+model.add(tf.layers.dense({ units: 1, inputShape: [1] }));
+model.compile({ optimizer: "sgd", loss: "meanSquaredError" });
+const prediction = model.predict(tf.tensor2d([5], [1, 1]));
+prediction.print();
 
 //import all components './components'
 import {
