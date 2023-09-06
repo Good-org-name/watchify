@@ -1,16 +1,10 @@
 import { Sequelize } from "sequelize";
+import { config as dotenvConfig } from "dotenv";
 
-const databaseUrl =
-  import.meta.env.VITE_DATABASE_URL || "postgres://localhost/watchify";
+dotenvConfig();
 
-const db = new Sequelize(databaseUrl, { logging: false });
+const databaseURL = process.env.DATABASE_URL || "postgres://localhost/watchify";
 
-db.authenticate()
-  .then(() => {
-    console.log("Database connected.");
-  })
-  .catch((err) => {
-    console.log("Error connecting to the database:", err);
-  });
+const db = new Sequelize(databaseURL, { logging: false });
 
 export default db;
