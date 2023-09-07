@@ -3,7 +3,7 @@ const axios = require("axios");
 
 const router = express.Router();
 
-router.get("/fetchMovies", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const response = await axios.get(
       "https://api.themoviedb.org/3/movie/popular",

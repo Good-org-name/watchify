@@ -1,7 +1,13 @@
 const Sequelize = require("sequelize");
-const { config } = require("dotenv");
+const dotenv = require("dotenv");
+const config = {};
 
-config();
+dotenv.config();
+config.logging = false;
+
+if (process.env.QUIET) {
+  config.logging = false;
+}
 
 const databaseURL = process.env.DATABASE_URL || "postgres://localhost/watchify";
 

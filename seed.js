@@ -1,5 +1,5 @@
 const db = require("./server/db/db.js");
-const User = require("./server/db/user.js");
+const User = require("./server/db/User.js");
 
 const seed = async () => {
   await db.sync({ force: true });

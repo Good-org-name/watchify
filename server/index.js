@@ -1,5 +1,5 @@
 const express = require("express");
-const path = require("path"); // Changed this line
+const path = require("path");
 const { fileURLToPath } = require("url");
 const db = require("./db/db.js");
 require("./db/index.js");
@@ -11,8 +11,8 @@ server.use("/dist", express.static(path.join(__dirname, "../../dist")));
 server.use("/static", express.static(path.join(__dirname, "../static")));
 
 //routes
-server.use("/api", userRoutes);
-server.use("/api", fetchTMDB);
+server.use("/api/users", userRoutes);
+server.use("/api/movies", fetchTMDB);
 
 server.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../index.html"));
