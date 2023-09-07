@@ -1,15 +1,15 @@
-import db from "./db.js";
-import { DataTypes } from "sequelize";
+const db = require("./db.js");
+const { STRING, ARRAY, INTEGER } = require("sequelize");
 
 const Movie = db.define("movie", {
   title: {
-    type: DataTypes.STRING,
+    type: STRING,
     allowNull: false,
   },
   genres: {
-    type: DataTypes.ARRAY(DataTypes.INTEGER),
+    type: ARRAY(INTEGER),
     defaultValue: [],
   },
 });
 
-export default Movie;
+module.exports = Movie;

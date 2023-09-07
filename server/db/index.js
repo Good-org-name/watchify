@@ -1,7 +1,7 @@
-import User from "./User.js";
-import Movie from "./Movie.js";
-import Genre from "./Genre.js";
-import GenreWeight from "./GenreWeight.js";
+const User = require("./User");
+const Movie = require("./Movie");
+const Genre = require("./Genre");
+const GenreWeight = require("./GenreWeight");
 
 // Relations
 User.hasMany(GenreWeight, { foreignKey: "userId" });
@@ -13,7 +13,12 @@ GenreWeight.belongsTo(Genre, { foreignKey: "genreId" });
 User.belongsToMany(Genre, { through: "UserGenres" });
 Genre.belongsToMany(User, { through: "UserGenres" });
 
-Movie.belongsToMany(Genre, { through: "MovieGenres" });
-Genre.belongsToMany(Movie, { through: "MovieGenres" });
+Movie.belongsToMany(Genre, { through: "MovieGenres", as: "movieGenres" });
+Genre.belongsToMany(Movie, { through: "MovieGenres", as: "genreMovies" });
 
-export { User, Movie, Genre, GenreWeight };
+module.exports = {
+  User,
+  Movie,
+  Genre,
+  GenreWeight,
+};

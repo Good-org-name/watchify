@@ -1,20 +1,20 @@
-import db from "./db.js";
-import { DataTypes } from "sequelize";
+const db = require("./db.js");
+const { STRING, ARRAY, INTEGER } = require("sequelize");
 
 const User = db.define("user", {
   username: {
-    type: DataTypes.STRING,
+    type: STRING,
     allowNull: false,
     unique: true,
   },
   password: {
-    type: DataTypes.STRING,
+    type: STRING,
     allowNull: false,
   },
   favoriteGenres: {
-    type: DataTypes.ARRAY(DataTypes.INTEGER),
+    type: ARRAY(INTEGER),
     defaultValue: [],
   },
 });
 
-export default User;
+module.exports = User;

@@ -1,10 +1,10 @@
-import { Sequelize } from "sequelize";
-import { config as dotenvConfig } from "dotenv";
+const Sequelize = require("sequelize");
+const { config } = require("dotenv");
 
-dotenvConfig();
+config();
 
 const databaseURL = process.env.DATABASE_URL || "postgres://localhost/watchify";
 
 const db = new Sequelize(databaseURL, { logging: false });
 
-export default db;
+module.exports = db;

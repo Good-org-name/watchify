@@ -1,11 +1,11 @@
-import db from "./db.js";
-import { DataTypes } from "sequelize";
+const db = require("./db.js");
+const { STRING } = require("sequelize");
 
 const Genre = db.define("genre", {
   name: {
-    type: DataTypes.STRING,
+    type: STRING,
     allowNull: false,
   },
 });
 
-export default Genre;
+module.exports = Genre;

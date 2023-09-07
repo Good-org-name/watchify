@@ -1,7 +1,7 @@
-import db from "./server/db/db.js";
-import User from "./server/db/user.js";
+const db = require("./server/db/db.js");
+const User = require("./server/db/user.js");
 
-async function seed() {
+const seed = async () => {
   await db.sync({ force: true });
 
   const users = await Promise.all([
@@ -32,7 +32,7 @@ async function seed() {
   ]);
 
   console.log(`Seeded ${users.length} users`);
-}
+};
 
 seed()
   .catch((err) => {

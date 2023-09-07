@@ -1,14 +1,10 @@
-import express from "express";
-import path, { dirname } from "path";
-import { fileURLToPath } from "url";
-import db from "./db/db.js";
-import "./db/index.js";
-import userRoutes from "./routes/userRoutes.js";
-import fetchTMDB from "./routes/fetchTMDB.js";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
+const express = require("express");
+const path = require("path"); // Changed this line
+const { fileURLToPath } = require("url");
+const db = require("./db/db.js");
+require("./db/index.js");
+const userRoutes = require("./routes/userRoutes.js");
+const fetchTMDB = require("./routes/fetchTMDB.js");
 const server = express();
 
 server.use("/dist", express.static(path.join(__dirname, "../../dist")));

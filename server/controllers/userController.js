@@ -1,6 +1,6 @@
-import User from "../db/User.js";
+const User = require("../db/User.js");
 
-export const getAllUsers = async (req, res) => {
+exports.getAllUsers = async (req, res) => {
   try {
     const users = await User.findAll();
     res.json(users);

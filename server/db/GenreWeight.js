@@ -1,19 +1,19 @@
-import db from "./db.js";
-import { DataTypes } from "sequelize";
+const db = require("./db.js");
+const { INTEGER } = require("sequelize");
 
 const GenreWeight = db.define("genreWeight", {
   userId: {
-    type: DataTypes.INTEGER,
+    type: INTEGER,
     allowNull: false,
   },
   genreId: {
-    type: DataTypes.INTEGER,
+    type: INTEGER,
     allowNull: false,
   },
   weight: {
-    type: DataTypes.INTEGER,
+    type: INTEGER,
     defaultValue: 0,
   },
 });
 
-export default GenreWeight;
+module.exports = GenreWeight;
