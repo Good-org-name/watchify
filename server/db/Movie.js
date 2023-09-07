@@ -1,20 +1,15 @@
 import db from "./db.js";
 import { DataTypes } from "sequelize";
 
-const User = db.define("user", {
-  username: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    unique: true,
-  },
-  password: {
+const Movie = db.define("movie", {
+  title: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  favoriteGenres: {
+  genres: {
     type: DataTypes.ARRAY(DataTypes.INTEGER),
     defaultValue: [],
   },
 });
 
-export default User;
+export default Movie;

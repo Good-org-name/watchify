@@ -2,6 +2,7 @@ import express from "express";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
 import db from "./db/db.js";
+import "./db/index.js";
 import userRoutes from "./routes/userRoutes.js";
 import fetchTMDB from "./routes/fetchTMDB.js";
 
