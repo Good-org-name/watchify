@@ -1,0 +1,22 @@
+TensorFlow Outline
+
+Data Collection: 
+  Fetch movie data from TMDB API and user interactions for training.
+
+Data Preprocessing: 
+  Format this data into a form that can be fed into a TensorFlow.js model. For example, if users rate movies and also specify whether they "watched," "want to watch," or are "not interested," need to convert these into numerical or categorical variables that the model can understand.
+
+Model Definition: 
+  Define the architecture of neural network model.
+
+Model Training: 
+  Use the processed data to train the model.
+
+Model Evaluation: 
+  After training, evaluate the model's performance to ensure it is making good recommendations.
+
+Model Deployment: 
+  Integrate the trained model into app. When a user logs in, their data and interactions can be fed into the model to receive personalized recommendations.
+
+Ongoing Training: 
+  As more user data becomes available, continually update and train model.
