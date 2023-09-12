@@ -25,6 +25,10 @@ module.exports = {
     filename: './public/bundle.js'
   },
   devtool: 'source-map',
+  performance: {
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+},
   module: {
     rules: [
       {
@@ -36,7 +40,12 @@ module.exports = {
             '@babel/preset-react'
           ]
         }
+      },
+      {
+        test: /\.(gif|svg|jpg|png)$/,
+        loader: "file-loader",
       }
+      
     ]
   }
 }
